@@ -54,7 +54,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'hhc2022',
+            docId: 'hhc2022/index',
             position: 'left',
             label: 'Holiday Hack Challenge 2022',
           },

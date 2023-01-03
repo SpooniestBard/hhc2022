@@ -1,4 +1,4 @@
 ---
 sidebar_position: 2
 ---
-# Windows Event Logs
+# The Elfen Ring

@@ -1,4 +1,4 @@
 ---
 sidebar_position: 2
 ---
-# Windows Event Logs
+# Credential Mining

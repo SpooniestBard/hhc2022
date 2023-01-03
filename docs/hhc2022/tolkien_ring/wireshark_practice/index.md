@@ -1,8 +1,12 @@
 ---
 sidebar_position: 1
 ---
-
 # Wireshark Practice
+<!-- MDX imports -->
+import Answer from '@site/src/components/Answer'
+import CodeBlock from '@theme/CodeBlock';
+
+<!-- Page content -->
 Our first challenge is to help a hapless elf who seems to have clicked on a malicious link in their email. We're given a very sus PCAP file called ```suspicious.pcap```
 
 :::note Question 1
@@ -13,6 +17,7 @@ There are objects in the PCAP file that can be exported by Wireshark and/or Tsha
 :::note Question 2
 What is the file name of the largest file we can export?
 :::
+<Answer answer="app.php">
 Assets can be exported from Wireshark by clicking ```File -> Export Objects -> HTTP...```
 
 ![Wireshark file export process](../assets/img/tr1-1.png)
@@ -22,6 +27,7 @@ Afterwards, the export dialogue opens:
 ![Wireshark HTTP file export dialogue](../assets/img/tr1-2.png)
 
 Here, we can see that the largest file is the second in this list: **```app.php```**, coming in at 808kb.
+</Answer>
 
 :::note Question 3
 What is the packet number that starts that app.php file?
@@ -32,13 +38,14 @@ Thankfully, we can find the answer to this in the same dialogue as above. If we 
 What is the IP of the Apache server?
 :::
 
-:::info Answer: ```192.185.57.242```
-Moving on, we’re asked to find the source address of the Apache server which served this file. We can find this by clicking on the app.php line of the export dialogue (which will select packet 687 for us) and then going back to the main Wireshark window.
+<details>
+<summary>Answer: <code>192.185.57.242</code></summary>
+```Moving on, we’re asked to find the source address of the Apache server which served this file. We can find this by clicking on the app.php line of the export dialogue (which will select packet 687 for us) and then going back to the main Wireshark window.```
 
 ![Wireshark entry for packet number 687](../assets/img/tr1-3.png)
 
 Looking at this image, we see a source IP address of ```192.185.57.242``` and a destination address of ```10.9.24.101```, which we can note for later. Since this packet was served in response to an HTTP request, the Apache server is the IP in the source column of this packet: **```192.185.57.242```**.
-:::
+</details>
 
 :::note Question 5
 What file is saved to the infected host?

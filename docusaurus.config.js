@@ -9,7 +9,7 @@ const config = {
   title: 'Devan and Kim',
   tagline: 'Hacking Things',
   url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  baseUrl: '/hhc2022/',
   trailingSlash: true,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',

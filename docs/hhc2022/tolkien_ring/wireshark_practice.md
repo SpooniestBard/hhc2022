@@ -8,6 +8,8 @@ import CodeBlock from '@theme/CodeBlock';
 
 ### Challenge
 :::info Challenge Text
+*Difficulty:* ★✰✰✰✰
+
 Use the Wireshark Phishing terminal in the Tolkien Ring to solve the mysteries around the suspicious PCAP. Get hints for this challenge by typing hint in the upper panel of the terminal.
 :::
 

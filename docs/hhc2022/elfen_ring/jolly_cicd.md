@@ -4,10 +4,14 @@ sidebar_position: 3
 # Jolly CI/CD
 
 ### Challenge
+:::info Challenge Text
+*Difficulty:* ★★★★★
 
-:::info Question
 Exploit a CI/CD pipeline. Get hints for this challenge from Tinsel Upatree in the Elfen Ring.
 :::
+
+
+### Answer
 
 Hm... That's not a very descriptive prompt. Since we're still feeling the rush from escaping from a container in the last challenge, let's see if we can escape this one too:
 

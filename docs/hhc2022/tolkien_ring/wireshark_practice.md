@@ -16,7 +16,9 @@ Use the Wireshark Phishing terminal in the Tolkien Ring to solve the mysteries a
 <!-- Page content -->
 Our first challenge is to help a hapless elf who seems to have clicked on a malicious link in their email. We're given a very sus PCAP file called ```suspicious.pcap```
 
-:::note Question 1
+### Answers
+
+:::note Terminal Question Prompt 1
 There are objects in the PCAP file that can be exported by Wireshark and/or Tshark. What type of objects can be exported from this PCAP?
 :::
 <details>
@@ -28,7 +30,7 @@ Assets can be exported from Wireshark by clicking ```File -> Export Objects``` a
 
 </details>
 
-:::note Question 2
+:::note Terminal Question Prompt 2
 What is the file name of the largest file we can export?
 :::
 <details>
@@ -41,7 +43,7 @@ Using the same method as before, we can select ```File -> Export Objects -> HTTP
 In the dialogue that opens, we can see that the largest file is the second in this list: **```app.php```**, coming in at 808kb.
 </details>
 
-:::note Question 3
+:::note Terminal Question Prompt 3
 What is the packet number that starts that app.php file?
 :::
 <details>
@@ -51,7 +53,7 @@ Thankfully, we can find the answer to this in the same dialogue as above. If we 
 
 </details>
 
-:::note Question 4
+:::note Terminal Question Prompt 4
 What is the IP of the Apache server?
 :::
 
@@ -64,7 +66,7 @@ What is the IP of the Apache server?
 Looking at this image, we see a source IP address of ```192.185.57.242``` and a destination address of ```10.9.24.101```, which we can note for later. Since this packet was served in response to an HTTP request, the Apache server is the IP in the source column of this packet: **```192.185.57.242```**.
 </details>
 
-:::note Question 5
+:::note Terminal Question Prompt 5
 What file is saved to the infected host?
 :::
 <details>
@@ -128,7 +130,7 @@ To put it shortly, the majority of this response’s size is made up of an extre
 
 </details>
 
-:::note Question 6
+:::note Terminal Question Prompt 6
 Attackers used bad TLS certificates in this traffic. Which countries were they registered to?
 :::
 

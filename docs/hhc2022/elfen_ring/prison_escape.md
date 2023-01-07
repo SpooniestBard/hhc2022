@@ -8,9 +8,14 @@ sidebar_position: 2
 This task asks us to escape a running container and find a file on the host operating system.
 
 ### Challenge
-:::info Question
+:::info Challenge Text
+*Difficulty:* ★★★✰✰
+
 Escape from a container. Get hints for this challenge from Bow Ninecandle in the Elfen Ring. What hex string appears in the host file /home/jailer/.ssh/jail.key.priv?
 :::
+
+
+### Answer
 
 Once we're inside our container prison, we start out by checking what we're allowed to do as root:
 

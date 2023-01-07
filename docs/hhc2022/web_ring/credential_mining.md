@@ -6,11 +6,14 @@ sidebar_position: 2
 ### Background
 Using the same packet capture as before, we're told that the first attack attempted by the naughty IP was a brute force login and that we need to find the first username they attempted.
 
-
 ### Challenge
-:::info Question
+:::info Challenge Text
+*Difficulty:* ★✰✰✰✰
+
 The first attack is a brute force login. What's the first username tried?
 :::
+
+### Answer
 
 Since we already know the IP address of the "Naughty IP"/source of the attack, we can start by filtering for all of the packets that originated there with the following Wireshark filter:
 

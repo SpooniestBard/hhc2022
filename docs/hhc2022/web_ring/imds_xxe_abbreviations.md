@@ -6,11 +6,15 @@ sidebar_position: 5
 ### Background
 Still analyzing the suspicious PCAP, we're reaching the endgame of the attacker: exfiltrating some information from [IMDS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html).
 
-### Challenge
 
-:::info Question
+### Challenge
+:::info Challenge Text
+*Difficulty:* ★★✰✰✰
+
 The last step in this attack was to use XXE to get secret keys from the IMDS service. What URL did the attacker force the server to fetch?
 :::
+
+### Answer
 
 We know two things that should help us with this challenge:
 

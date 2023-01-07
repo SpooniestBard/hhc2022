@@ -22,8 +22,16 @@ A Suricata rule consists of three parts, in this order:
 1. The rule options - generally the longest and most complicated section of the rule. These options can allow the filter to be customized extensively depending on the protocol examined. For instance, when examining TLS traffic, rule options can be specified which filter for specific certificate subject names (no spoilers though 🤫)
 
 
-### Question 1
-:::note Question 1
+### Challenge
+:::info Challenge Text
+*Difficulty:* ★★★✰✰
+
+Help detect this kind of malicious activity in the future by writing some Suricata rules. Work with Dusty Giftwrap in the Tolkien Ring to get some hints.
+:::
+
+### Answers
+
+:::note Terminal Question Prompt 1
 Please create a Suricata rule to catch the DNS lookups for adv.epostoday.uk. Whenever there's a match, the alert message (msg) should read "Known bad DNS lookup, possible Dridex infection".
 :::
 <details>
@@ -35,8 +43,8 @@ Beginning with a fairly easy rule: we'd like to alert on DNS traffic to the mali
 </p>
 </details>
 
-### Question 2
-:::note Question 2
+
+:::note Terminal Question Prompt 2
 Develop a Suricata rule that alerts whenever the infected IP address ```192.185.57.242``` communicates with internal systems over HTTP. When there's a match, the message (msg) should read ```Investigate suspicious connections, possible Dridex infection```.
 :::
 
@@ -49,8 +57,8 @@ Next, we are asked to alert when a known infected IP address on our end (192.185
 </p>
 </details>
 
-### Question 3
-:::note Question 3
+
+:::note Terminal Question Prompt 3
 We heard that some naughty actors are using TLS certificates with a specific ```CN```. Develop a Suricata rule to alert and match on an SSL certificate for ```heardbellith.Icanwepeh.nagoya```. When your rule matches, the message (msg) should read ```Investigate bad certificates, possible Dridex infection```.
 :::
 
@@ -63,8 +71,8 @@ Now we want to alert when receiving traffic containing specific TLS certificate 
 </p>
 </details>
 
-### Question 4
-:::note Question 4
+
+:::note Terminal Question Prompt 4
 Okay, one more to rule them all and in the darkness find them. Let's watch for one line from the JavaScript: ```let byteCharacters = atob```. Oh, and that string might be Gzip compressed - I hope that's OK! Just in case they try this again, please alert on HTTP data with the message ```Suspicious JavaScript function, possible Dridex infection```
 :::
 

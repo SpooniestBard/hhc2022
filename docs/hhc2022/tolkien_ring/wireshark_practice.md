@@ -6,33 +6,48 @@ sidebar_position: 1
 import Answer from '@site/src/components/Answer'
 import CodeBlock from '@theme/CodeBlock';
 
+### Challenge
+:::info Challenge Text
+Use the Wireshark Phishing terminal in the Tolkien Ring to solve the mysteries around the suspicious PCAP. Get hints for this challenge by typing hint in the upper panel of the terminal.
+:::
+
 <!-- Page content -->
 Our first challenge is to help a hapless elf who seems to have clicked on a malicious link in their email. We're given a very sus PCAP file called ```suspicious.pcap```
 
 :::note Question 1
 There are objects in the PCAP file that can be exported by Wireshark and/or Tshark. What type of objects can be exported from this PCAP?
 :::
+<details>
+<summary>Answer: <code>HTTP</code></summary>
 
+Assets can be exported from Wireshark by clicking ```File -> Export Objects``` and then selecting type of object to be exported. The only objects that can be exported from this PCAP are **HTTP** objects.
+
+![Wireshark file export process](./assets/img/tr1-1.png)
+
+</details>
 
 :::note Question 2
 What is the file name of the largest file we can export?
 :::
-<Answer answer="app.php">
-Assets can be exported from Wireshark by clicking ```File -> Export Objects -> HTTP...```
+<details>
+<summary>Answer: <code>app.php</code></summary>
 
-![Wireshark file export process](./assets/img/tr1-1.png)
-
-Afterwards, the export dialogue opens:
+Using the same method as before, we can select ```File -> Export Objects -> HTTP```
 
 ![Wireshark HTTP file export dialogue](./assets/img/tr1-2.png)
 
-Here, we can see that the largest file is the second in this list: **```app.php```**, coming in at 808kb.
-</Answer>
+In the dialogue that opens, we can see that the largest file is the second in this list: **```app.php```**, coming in at 808kb.
+</details>
 
 :::note Question 3
 What is the packet number that starts that app.php file?
 :::
+<details>
+<summary>Answer: <code>687</code></summary>
+
 Thankfully, we can find the answer to this in the same dialogue as above. If we look at the far left column, we see that this file begins at packet number **```687```**.
+
+</details>
 
 :::note Question 4
 What is the IP of the Apache server?
@@ -50,6 +65,9 @@ Looking at this image, we see a source IP address of ```192.185.57.242``` and a 
 :::note Question 5
 What file is saved to the infected host?
 :::
+<details>
+<summary>Answer: <code>Ref_Sept24-2020.zip</code></summary>
+
 At this point, it’s news to us that a file had been saved to a host at all, but thanks, terminal. Since we’d been told that this started when the elf we’re helping clicked a link in their email, it seems likely that the file was delivered over HTTP. Since we’re already inspecting packet 687, we can right click it in the GUI and select Follow -> HTTP Stream to view the actual content(s) of app.php.
 
 A quick analysis of the embedded JavaScript on this page should hopefully make more sense of what happened. The first retrieval of app.php merely sets two cookies and then reloads the page (comments are ours):
@@ -106,10 +124,15 @@ saveAs(blob1, 'Ref_Sept24-2020.zip'); // Using the saveAs function defined above
 
 To put it shortly, the majority of this response’s size is made up of an extremely large string named “byteCharacters”. This string is converted to a byte array and then forcibly downloaded to our very sad elf’s computer. In the final line, we can see that this file is downloaded as **```Ref_Sept24-2020.zip```**.
 
+</details>
+
 :::note Question 6
 Attackers used bad TLS certificates in this traffic. Which countries were they registered to?
 :::
 
-:::info Answer: ```Israel, South Sudan```
-Looking through the certificates in the resultant traffic reveals several certificates from Microsoft and Baltimore CyberTrust Root, all of which appear to be legitimate at a glance. Two certificates however are signed by the common names of heardbellith.Icanwepeh.nagoya and psprponounst.aquarelle both of which looked like absolute gibberish. At this point, we decided to Google these names to make sure that wasn’t due to us being uncultured Americans, but thankfully, they do seem to be gibberish in every language. The issuers of these certificates have the country codes of IL and SS, respectively, and a quick Google of these codes showed that our answer should be Israel, South Sudan.
-:::
+<details>
+<summary>Answer: <code>Israel, South Sudan</code></summary>
+
+Looking through the certificates in the resultant traffic reveals several certificates from Microsoft and Baltimore CyberTrust Root, all of which appear to be legitimate at a glance. Two certificates however are signed by the common names of ```heardbellith.Icanwepeh.nagoya``` and ```psprponounst.aquarelle``` both of which looked like absolute gibberish. At this point, we decided to Google these names to make sure that wasn’t due to us being uncultured Americans, but thankfully, they do seem to be gibberish in every language. The issuers of these certificates have the country codes of IL and SS, respectively, and a quick Google of these codes showed that our answer should be **```Israel, South Sudan```**.
+
+</details>

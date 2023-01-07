@@ -29,6 +29,6 @@ function HomepageHeader() {
 
 export default function Home() {
   return (
-    <Redirect to="/docs/hhc2022/" />
+    <Redirect to="/hhc2022/docs/hhc2022/" />
   );
 }

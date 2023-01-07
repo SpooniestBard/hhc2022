@@ -13,6 +13,15 @@ The Boria Mine door is standing firmly between us and the final trial to retriev
 
 ...Okay 🤔. Well, we're going to have a hard time proving our elvishness without being able to input elf characters. And that's not for lack of trying; we started this challenge off by trying to submit [Tengwar Unicode characters](https://en.wikipedia.org/wiki/Tengwar#Unicode) to no avail (that would have been pretty cool though, huh?). Looks like we're going to have to figure something else out.
 
+### Challenge
+:::info Challenge Text
+*Difficulty:* ★★★✰✰
+
+Open the door to the Boria Mines. Help Alabaster Snowball in the Web Ring to get some hints for this challenge.
+:::
+
+### Answer
+
 ### PIN 1
 <details>
 <summary><b>Answer:</b>

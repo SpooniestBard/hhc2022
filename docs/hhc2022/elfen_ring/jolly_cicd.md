@@ -174,7 +174,7 @@ Resolving deltas: 100% (1799/1799), done.
 Updating files: 100% (9320/9320), done.
 ```
 
-We're nearing the end here, but the main thing that we need to consider next is how to get the CI/CD runner agent to set up the host so that we can access it. We can see what the runner currently does by checking out by examining the repo's CI/CD configuration - ```.gitlab-ci.yml```. This file is located in the root of the repository:
+We're nearing the end here, but the main thing that we need to consider next is how to get the CI/CD runner agent to set up the host so that we can access it. We can see what the runner currently does by examining the repo's CI/CD configuration - ```.gitlab-ci.yml```. This file is located in the root of the repository:
 
 ```
 grinchum-land:~/wordpress.flag.net.internal$ cat .gitlab-ci.yml 

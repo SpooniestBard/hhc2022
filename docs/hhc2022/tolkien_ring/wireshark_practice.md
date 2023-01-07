@@ -59,7 +59,7 @@ What is the IP of the Apache server?
 
 <details>
 <summary>Answer: <code>192.185.57.242</code></summary>
-```Moving on, we’re asked to find the source address of the Apache server which served this file. We can find this by clicking on the app.php line of the export dialogue (which will select packet 687 for us) and then going back to the main Wireshark window.```
+Moving on, we’re asked to find the source address of the Apache server which served this file. We can find this by clicking on the app.php line of the export dialogue (which will select packet 687 for us) and then going back to the main Wireshark window.
 
 ![Wireshark entry for packet number 687](./assets/img/tr1-3.png)
 

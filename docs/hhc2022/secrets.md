@@ -11,7 +11,7 @@ Thar be treasure in these parts!
 <details>
 <summary>location: <code>In the Hall of Talks past track 7</code></summary>
 
-From the track 7 door push the <-- (left arrow) 7 times
+From the track 7 door, push the <-- (left arrow) 7 times
 
 ![treasure 1 location](./assets/img/s1-1.png)
 </details>

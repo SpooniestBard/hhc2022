@@ -8,12 +8,14 @@ hide_table_of_contents: true
 
 Passing through the Boria Mine door, we're brought face to face with [Glamtariel and her sentient fountain](https://glamtarielsfountain.com). Our challenge is to discover something that Glamtariel has never revealed. Is she holding the Web Ring that we're seeking?
 
-
 ### Challenge
+:::info Challenge Text
+*Difficulty:* ★★★★★
 
-:::info Question
 Stare into Glamtariel's fountain and see if you can find the ring! What is the filename of the ring she presents you? Talk to Hal Tandybuck in the Web Ring for hints.
 :::
+
+### Answer
 
 #### Hints from Glamtariel
 
@@ -22,7 +24,7 @@ According to Hal Tandybuck, Glamtariel will provide us with  hints by (somehow) 
 
 #### Solution
 
-There are three phases to our interaction with Glamtariel, broken up by the objects that we are able to offer her. By picking up objects and presenting them to either the fountain or Glamtariel, the recipient will give us
+There are three phases to our interaction with Glamtariel, broken up by the objects that we are able to offer her. During all of the phases, by dropping objects on either the fountain or Glamtariel, they will each reveal their mundane thoughts to us along with a few s3cr3ts.
 
 ![First phase of interaction with Glamtariel](./assets/img/wr8-1.png)
 
@@ -30,11 +32,11 @@ By giving Glamtariel and the fountain both the elf and santa objects, we can mov
 
 ![Second phase of interaction with Glamtariel](./assets/img/wr8-2.png)
 
-By giving the fountain and Glamtariel all of these objects (and clicking away a spooky eye along the way), we can advance to the final phase:
+Next, by giving the fountain and Glamtariel all of these objects haphazardly (and clicking away a spooky eye along the way), we can advance to the final phase:
 
 ![Third phase of interaction with Glamtariel](./assets/img/wr8-3.png)
 
-Now that we're here, we're able to coax secrets out of Glamtariel. Presenting her with the grey ring has her mention a **RINGLIST** that she makes us promise not to tell anyone about. Dragging the red ring to the fountain makes it mention that Glamtariel can speak in another **TYPE** of language. Unfortunately, we've now exhausted all of the useful information either party will give us through item interactions. At this point, we decided to try asking in a different way by taking a peek at the web traffic that we were sending Glamtariel:
+Now that we're here, we're able to coax secrets out of Glamtariel. Presenting her with the grey ring has her mention a **RINGLIST** that she makes us promise not to tell anyone about. Dragging the red ring to the fountain makes it mention that Glamtariel can speak in another **TYPE** of language. Unfortunately, we've now exhausted all of the useful information either party will give us through a browser. At this point, we decided to try asking in a different way by taking a peek at the web traffic that we were sending Glamtariel:
 
 ![Web request to Glamtariel](./assets/img/wr8-4.png)
 
@@ -44,7 +46,7 @@ It looks like the data is sent in a simple JSON format. Since ```reqType``` is o
 
 This request works! Glamtariel is clearly well-learned if she can speak such an arcane language. Now that we can ask in XML, we'll try to find that ringlist file that Glamtariel mentioned earlier.
 
-Trying a few strings in the ```imgDrop``` field such as ```ringlist```, ```ringlist.xml```, and ```RINGLIST``` don't seem to have any effect - neither the fountain nor Glamtariel have any idea what we're talking about. At this point, we'll try an XXE for ```ringlist.txt``` (```.txt``` since the fountain hints that the list is stored in a **SIMPLE** format). We send the following as our request (also using the ```/app``` directory since we need to browse from the filesystem's root and **APP** was provided as a hint earlier):
+Trying a few strings in the ```imgDrop``` field such as ```ringlist```, ```ringlist.xml```, and ```RINGLIST``` doesn't seem to have any effect - neither the fountain nor Glamtariel have any idea what we're talking about. At this point, we'll try an XXE for ```ringlist.txt``` (```.txt``` since the fountain hints that the list is stored in a **SIMPLE** format). We send the following as our request (also using the ```/app``` directory since we need to browse from the filesystem's root and **APP** was provided as a hint earlier):
 
 ```xml
 <?xml version="1.0" encoding"UTF-8" ?>

@@ -39,7 +39,7 @@ Please create a Suricata rule to catch the DNS lookups for adv.epostoday.uk. Whe
 <CodeBlock language="bash">alert dns any any -> any any (msg:"Known bad DNS lookup, possible Dridex infection"; dns.query; content:"adv.epostoday.uk"; nocase; sid: 0001;)</CodeBlock>
 </summary>
 <p>
-Beginning with a fairly easy rule: we'd like to alert on DNS traffic to the malicious endpoint encountered earlier. In order to match specific DNS queries, we need to add the <code>dns.query</code> keyword, which modifies all following <code>content</code> keywords to match the DNS query itself. We then add a plain <code>content</code> match of "adv.epostoday.uk" to filter for DNS queries with match the malicious endpoint.
+Beginning with a fairly easy rule: we'd like to alert on DNS traffic to the malicious endpoint encountered earlier. In order to match specific DNS queries, we need to add the <code>dns.query</code> keyword, which modifies all following <code>content</code> keywords to match the DNS query itself. We then add a plain <code>content</code> match of "adv.epostoday.uk" to filter for DNS queries which match the malicious endpoint.
 </p>
 </details>
 
@@ -67,7 +67,7 @@ We heard that some naughty actors are using TLS certificates with a specific ```
 <CodeBlock language="bash">alert tls any any &lt;&gt; any any (msg:"Investigate bad certificates, possible Dridex infection"; tls.cert_subject; content:"heardbellith.Icanwepeh.nagoya"; sid: 0003;)</CodeBlock>
 </summary>
 <p>
-Now we want to alert when receiving traffic containing specific TLS certificate CN. For this, we use the <code>tls</code> protocol, and set the source and destination as any IP and any port. Since we need to match on a specific CN, we provide the <code>tls.cert_subject</code> keyword, much like the DNS query rule we created earlier. This keyword modifies following <code>content</code> fields to apply to (unsurprisingly) the TLS certificates subject, so we add the <code>content</code> field afterwards to match our target.
+Now we want to alert when receiving traffic containing a specific TLS certificate CN. For this, we use the <code>tls</code> protocol, and set the source and destination as any IP and any port. Since we need to match on a specific CN, we provide the <code>tls.cert_subject</code> keyword, much like the DNS query rule we created earlier. This keyword modifies following <code>content</code> fields to apply to (unsurprisingly) the TLS certificates subject, so we add the <code>content</code> field afterwards to match our target.
 </p>
 </details>
 

@@ -5,6 +5,15 @@ sidebar_position: 1
 
 Everybody looks better in a hat!
 
+### Challenge
+:::info Challenge Text
+*Difficulty:* ★★✰✰✰
+
+Travel to the Burning Ring of Fire and purchase a hat from the vending machine with KringleCoin. Find hints for this objective hidden throughout the tunnels.
+:::
+
+### Answer
+
 ### Hat Purchasing FAQs
 
 <details>
@@ -32,7 +41,7 @@ Go on a treasure hunt!!!  You can check out our [super secret guide](/docs/hhc20
 <details>
 <summary>What if I'm a cotton headed ninny muggins that doesn't remember their wallet key???</summary>
 
-We got you fam. You can use some santa magic to retrieve you key if you use the super secret santa magic terminal in a super secret location. 
+We got you fam. You can use some santa magic to retrieve your key if you use the super secret santa magic terminal in a super secret location. 
 
 on the left side of the main hall walk all the way back and then turn right to go behind the building and into the secret room with the lol floor and space turtle dude.
 ![to get to the santa magic portal go here](./assets/img/santa_magic1.png)
@@ -61,7 +70,7 @@ We have our hat vendor's wallet address ```0xF845301A31Bc6fB367beCA5f402037d9a95
 
 ![Vending machine of HATS](./assets/img/br1-5.png)
 
-Now that we have pre-approved our purchase at the KTM we can head over to the HATS vending machine to make our purchase!
+Now that we have pre-approved it at the KTM we can head over to the HATS vending machine to make our purchase!
 
 We click the ```Approved a transaction? Know your Hat ID? Click here to buy``` button and fill out the form with our ```wallet address: 0xf22e94BeD2084C2F61874307D0449fd16b999C87``` and the ```Hat ID: 591```
 

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkhhc_2022=self.webpackChunkhhc_2022||[]).push([[195],{9294:(e,c,h)=>{h.r(c),h.d(c,{default:()=>n});var t=h(7294),u=(h(9960),h(2263),h(6550));function n(){return t.createElement(u.l_,{to:"/docs/hhc2022/"})}}}]);
